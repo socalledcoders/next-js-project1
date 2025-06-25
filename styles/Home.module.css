@@ -30,6 +30,7 @@
 .main {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
   gap: 32px;
   grid-row-start: 2;
 }
@@ -162,20 +163,4 @@ a.secondary {
   .logo {
     filter: invert();
   }
-}
-
-.main-nav ul {
-  display: flex;
-  justify-content: center;
-}
-
-.main-nav ul li {
-  font-weight: 600;
-  margin: 0 10px;
-  list-style: none;
-  cursor: pointer;
-}
-
-.blog {
-  margin-top: 10px;
 }

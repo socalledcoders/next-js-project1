@@ -1,0 +1,17 @@
+.main {
+  margin: 0 10px;
+  background-color: aqua;
+  padding: 1.2rem 0;
+}
+
+.mainNav ul {
+  display: flex;
+  justify-content: center;
+}
+
+.mainNav ul li {
+  font-weight: 600;
+  margin: 0 10px;
+  list-style: none;
+  cursor: pointer;
+}

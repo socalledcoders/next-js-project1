@@ -1,0 +1,12 @@
+.blog {
+  margin-top: 10px;
+  cursor: pointer;
+  border: 1px solid gainsboro;
+}
+
+.container {
+  margin: 2rem;
+  padding: 2rem;
+  background-color: aquamarine;
+  text-align: center;
+}

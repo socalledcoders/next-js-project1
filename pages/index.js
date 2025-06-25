@@ -1,7 +1,7 @@
 import styles from '@/styles/Home.module.css';
 import { Geist, Geist_Mono } from 'next/font/google';
 import Head from 'next/head';
-import Link from 'next/link';
+import Image from 'next/image';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -23,38 +23,18 @@ export default function Home() {
         <meta name='keywords' content='blog, hunterblog, coding blog'></meta>
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      {/* <Script src='/sc.js' strategy='lazyOnload'></Script> */}
-      {/* <style jsx>
-            {`
-              h1 {
-                color: #0070f3;
-              }
-            `}
-          </style> */}
       <div
         className={`${styles.page} ${geistSans.variable} ${geistMono.variable}`}
       >
-        {/* <Dummy /> */}
-        <nav className={`${styles['main-nav']}`}>
-          <ul>
-            <Link href='/'>
-              <li>Home</li>
-            </Link>
-            <Link href='/about'>
-              <li>About</li>
-            </Link>
-            <Link href='/blogs'>
-              <li>Blogs</li>
-            </Link>
-            <Link href='/contact'>
-              <li>Contact</li>
-            </Link>
-          </ul>
-        </nav>
         <main className={styles.main}>
           <h1>Hunting Coder</h1>
+          <Image
+            src='/homeimg.jpg'
+            alt='Homeimage'
+            width={518}
+            height={345}
+          ></Image>
           <p>A Blog for coders by a coder</p>
-          {/* <div className={`${styles1.con} ${styles2.con}`}> */}
           <div>
             <h2>Popular Blogs</h2>
             <div className={`${styles.blog}`}>
