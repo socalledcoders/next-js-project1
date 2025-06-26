@@ -1,7 +1,0 @@
-{
-  "title": "How to Learn Nodejs",
-  "content": "Node.js is a powerful runtime environment that allows you to run JavaScript on the server side. To learn Node.js, start with understanding its event-driven architecture and non-blocking I/O model. Familiarize yourself with core modules like 'http', 'fs', and 'path'. Build simple applications to grasp concepts like routing, middleware, and error handling. Explore popular frameworks like Express.js for building web applications. Practice by creating RESTful APIs and real-time applications using WebSockets. Engage with the Node.js community through forums and contribute to open-source projects to deepen your understanding.",
-  "author": "Jane Doe",
-  "metadesc": "Learn Node.js effectively with our comprehensive guide. Start with the basics and progress to advanced topics.",
-  "slug": "how-to-learn-nodejs"
-}
