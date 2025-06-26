@@ -16,7 +16,6 @@ const Contact = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         alert('contact submitted successfully');
       });
   };

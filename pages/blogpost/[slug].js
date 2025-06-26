@@ -33,12 +33,12 @@ const blogPost = (props) => {
 // }
 
 export async function getStaticPaths() {
+  let files = await fs.promises.readdir('blogdata');
+  files = files.map((fileName) => {
+    return { params: { slug: fileName.split('.')[0] } };
+  });
   return {
-    paths: [
-      { params: { slug: 'how-to-learn-javascript' } },
-      { params: { slug: 'how-to-learn-react' } },
-      { params: { slug: 'how-to-learn-nodejs' } },
-    ],
+    paths: files,
     fallback: false,
   };
 }
