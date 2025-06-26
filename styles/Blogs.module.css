@@ -1,12 +1,26 @@
 .blog {
-  margin-top: 10px;
+  margin-top: 20px;
   cursor: pointer;
-  border: 1px solid gainsboro;
 }
 
 .container {
-  margin: 2rem;
-  padding: 2rem;
-  background-color: aquamarine;
-  text-align: center;
+  margin: 40px auto;
+  max-width: 45vw;
+  /* text-align: center; */
+}
+
+.h3 {
+  font-size: 1.2rem;
+}
+.p {
+  margin-top: 10px;
+  font-size: 1rem;
+}
+.btn {
+  margin-top: 10px;
+  border-radius: 5px;
+  padding: 7px 10px;
+  color: white;
+  background-color: rgb(90, 87, 87);
+  cursor: pointer;
 }

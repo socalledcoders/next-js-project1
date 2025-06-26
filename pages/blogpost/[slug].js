@@ -1,34 +1,56 @@
-import { useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react';
+import fs from 'fs';
+import { useState } from 'react';
 import styles from '../../styles/BlogPost.module.css';
 
 // step 1: populate the blog post data
 const blogPost = (props) => {
-  // const router = useRouter();
-
-  // const { slug } = router.query;
-
+  function createMarkup(content) {
+    return { __html: content };
+  }
   const [blog, setBlog] = useState(props.blog);
-
   return (
-    <main className={styles.container}>
-      <h1>{blog && blog.title}</h1>
-      <p>{blog && blog.content}</p>
-    </main>
+    <div className={styles.container}>
+      <main>
+        <h1 className={styles.h1}>{blog && blog.title}</h1>
+        {blog && <div dangerouslySetInnerHTML={createMarkup(blog.content)} />}
+      </main>
+    </div>
   );
 };
 
-export async function getServerSideProps(context) {
-  const slug = context.query.slug;
-  let blog;
-  try {
-    const data = await fetch(`http://localhost:3000/api/getBlog?slug=${slug}`);
-    blog = await data.json();
-  } catch (err) {
-    console.log('error in getting the blog');
-  }
+// export async function getServerSideProps(context) {
+//   const slug = context.query.slug;
+//   let blog;
+//   try {
+//     const data = await fetch(`http://localhost:3000/api/getBlog?slug=${slug}`);
+//     blog = await data.json();
+//   } catch (err) {
+//     console.log('error in getting the blog');
+//   }
+//   return {
+//     props: { blog },
+//   };
+// }
+
+export async function getStaticPaths() {
   return {
-    props: { blog },
+    paths: [
+      { params: { slug: 'how-to-learn-javascript' } },
+      { params: { slug: 'how-to-learn-react' } },
+      { params: { slug: 'how-to-learn-nodejs' } },
+    ],
+    fallback: false,
+  };
+}
+
+export async function getStaticProps(context) {
+  const blog = await fs.promises.readFile(
+    `blogdata/${context.params.slug}.json`,
+    'utf-8'
+  );
+
+  return {
+    props: { blog: JSON.parse(blog) },
   };
 }
 

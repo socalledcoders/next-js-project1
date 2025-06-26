@@ -1,6 +1,7 @@
 .container {
-  margin: 2rem;
-  padding: 2rem;
-  background-color: aquamarine;
-  text-align: center;
+  margin: 40px auto;
+  max-width: 45vw;
+}
+.h1 {
+  margin-bottom: 15px;
 }
